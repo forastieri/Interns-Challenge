@@ -7,9 +7,11 @@ Neste desafio, faremos uma análise de rede social e queremos extrair dessa rede
 
 Essa métrica tenta aproximar uma medida de influência de um indivíduo dentro de uma rede social.
 
-A "Proximidade" de um vértice (V) é o inverso do "Distanciamento".
-A métrica "Distanciamento" de um dado vértice (V) é a soma de todas as distâncias de cada vértice até (V).
-E a distância entre o vértice (V1) e o vértice (V2) é definida como a menor distância entre (V1) e (V2).
+A "Proximidade" de um vértice é o inverso de seu "Distanciamento".
+
+A métrica "Distanciamento" de um dado vértice V<sub>k</sub> é a soma de todas as distâncias entre cada outro vértice e V<sub>k</sub>.
+
+E a distância entre o vértice V<sub>0</sub> e o vértice V<sub>1</sub> é definida como a menor distância possível entre V<sub>0</sub> e V<sub>1</sub>.
 
 O desafio é classificar os vértices em um determinado grafo (fornecido no edges.dat) pela sua "Proximidade".
 Cada linha do arquivo consiste em dois nomes de vértice separados por um único espaço, o que representa uma ligação entre esses dois vértices.
@@ -17,13 +19,13 @@ Cada linha do arquivo consiste em dois nomes de vértice separados por um único
 
 ## Entrega:
 
-Você deve fazer um fork deste repositório, implementar o seu código e um curto arquivo README.md delineando a solução e explicando como construir e executar o código.
+Você deve fazer um **fork deste repositório**, implementar o seu código e substituir este arquivo README.md, e nele delinear a solução e explicando como construir e executar o código.
 
 O seu código deve ser escrito em Python ou Scala (ou uma linguagem de programação funcional como Clojure, Scheme, Haskell ou F#).
 
 A estrutura e legibilidade do código-base serão avaliadas.
 
-Opcional: Use pelo menos uma função anônima no seu código.
+###### Opcional: Use pelo menos uma função anônima no seu código.
 
 
 ## Considerações Finais:
