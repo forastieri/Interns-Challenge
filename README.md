@@ -1,5 +1,5 @@
 Olá candidata(o),
-Você foi selecionada(o) para participar da próxima etapa do processo de seleção para a vaga de estagiário desenvolvedor na maior empresa focada em Big Data no Brasil. Esta fase consiste em um desafio.
+você foi selecionada(o) para participar da próxima etapa do processo de seleção para a vaga de estagiário desenvolvedor na maior empresa focada em Big Data no Brasil. Esta fase consiste em um desafio.
 
 ## Algoritmo de Proximidade:
 
