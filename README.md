@@ -30,7 +30,7 @@ A estrutura e legibilidade do código-base serão avaliadas.
 
 ## Considerações Finais:
 
-Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a interação na rede, porém evite usar uma biblioteca que já implementa quaisquer algoritmos de grafo ou redes.
+Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a interação na rede, porém não use bibliotecas que já implementem quaisquer algoritmos de grafo ou redes.
 
 O código entregue no GitHub deverá ser executado sem alterações, e independente da interferência dos avaliadores. A única exceção é a instalação de dependências.
 
