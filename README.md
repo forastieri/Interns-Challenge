@@ -34,4 +34,4 @@ Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a inte
 
 O código entregue no GitHub deverá ser executado sem alterações, e independente da interferência dos avaliadores. A única exceção é a instalação de dependências.
 
-O prazo de entrega é de 5 dias.
+O prazo de entrega é de 4 dias.
