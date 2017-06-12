@@ -25,7 +25,7 @@ O seu código deve ser escrito em Python ou Scala (ou uma linguagem de programa�
 
 A estrutura e legibilidade do código-base serão avaliadas.
 
-###### Opcional: Use pelo menos uma função anônima no seu código.
+##### Bonus: Use pelo menos uma função anônima no seu código.
 
 
 ## Considerações Finais:
