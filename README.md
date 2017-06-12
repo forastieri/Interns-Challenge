@@ -19,7 +19,7 @@ Cada linha do arquivo consiste em dois nomes de vértice separados por um único
 
 ## Entrega:
 
-Você deve fazer um **fork deste repositório**, implementar o seu código e substituir este arquivo README.md, e nele delinear a solução e explicando como construir e executar o código.
+Você deve fazer um **fork deste repositório**, implementar o seu código e substituir este arquivo README.md; e nele delinear a solução e explicando como construir e executar o código.
 
 O seu código deve ser escrito em Python ou Scala (ou uma linguagem de programação funcional como Clojure, Scheme, Haskell ou F#).
 
