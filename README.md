@@ -34,7 +34,7 @@ A estrutura e legibilidade do código-base serão avaliadas.
 
 Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a interação na rede, porém **não use nem copie** bibliotecas que já implementem quaisquer algoritmos de grafo ou redes.
 
-**Lembre-se de fazer commits intermediários, enquanto estiver desenvolvendo sua solução.**
+**Lembre-se de fazer commits intermediários, _enquanto estiver desenvolvendo sua solução_.**
 
 O código entregue no GitHub deverá ser executado sem alterações, e independente da interferência dos avaliadores. A única exceção é a instalação de dependências.
 
