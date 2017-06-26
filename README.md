@@ -5,7 +5,7 @@ você foi selecionada(o) para participar da próxima etapa do processo de seleç
 
 ## Algoritmo de Proximidade:
 
-Neste desafio, faremos uma análise de rede social e queremos extrair dessa rede social uma métrica conhecida como “Closeness centrality”, também chamada de "Proximidade".
+Neste desafio, faremos uma análise de rede social e queremos extrair dessa rede social uma métrica conhecida como "Proximidade".
 
 Essa métrica tenta aproximar uma medida de influência de um indivíduo dentro de uma rede social.
 
@@ -32,7 +32,9 @@ A estrutura e legibilidade do código-base serão avaliadas.
 
 ## Considerações Finais:
 
-Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a interação na rede, porém **não use** bibliotecas que já implementem quaisquer algoritmos de grafo ou redes; E copiar código de uma biblioteca equivale a usa-la.
+Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a interação na rede, porém **não use nem copie** bibliotecas que já implementem quaisquer algoritmos de grafo ou redes.
+
+**Lembre-se de fazer commits intermediários, enquanto estiver desenvolvendo sua solução.**
 
 O código entregue no GitHub deverá ser executado sem alterações, e independente da interferência dos avaliadores. A única exceção é a instalação de dependências.
 
