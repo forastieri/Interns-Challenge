@@ -7,7 +7,7 @@ você foi selecionada(o) para participar da próxima etapa do processo de seleç
 
 Neste desafio, faremos uma análise de rede social e queremos extrair dessa rede social uma métrica conhecida como "Proximidade".
 
-Essa métrica tenta aproximar uma medida de influência de um indivíduo dentro de uma rede social.
+Essa métrica tenta avaliar a influência de um indivíduo dentro de uma rede social.
 
 A "Proximidade" de um vértice é o inverso de seu "Distanciamento".
 
@@ -34,7 +34,7 @@ A estrutura e legibilidade do código-base serão avaliadas.
 
 Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a interação na rede, porém **não use nem copie** bibliotecas que já implementem quaisquer algoritmos de grafo ou redes.
 
-**Lembre-se de fazer commits intermediários, _enquanto estiver desenvolvendo sua solução_.**
+**Lembre-se de fazer commits intermediários, _enquanto estiver desenvolvendo sua solução_; estamos interessados na evolução do código.**
 
 O código entregue no GitHub deverá ser executado sem alterações, e independente da interferência dos avaliadores. A única exceção é a instalação de dependências.
 
