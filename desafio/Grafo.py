@@ -105,7 +105,7 @@ class GrafoCaminhos(object):
 #==============================================================================================
 
 #>>>>>>>>>>>Bônus<<<<<<<<<<<
-#Classe com métodos de cálculos da Classe Grafo
+#Classe com métodos de cálculos para Classe Grafo
 class GrafoCalc(object):
     #construtor da classe, exige que passe como parâmetro um objeto da classe Grafo
     def __init__(self, pGrafo):
