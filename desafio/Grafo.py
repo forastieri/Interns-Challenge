@@ -1,12 +1,12 @@
 #Classe para representar um grafo com suas vértices e arestas
-class Grafo:
+class Grafo(object):
     def __init__(self):
         self.lista_vizinhos = {}
-        self._lista_vertices = []
+        self.__lista_vertices = []
 
     #Método para adicionar um vértice
     def add_vertice(self, vertice):
-        self._lista_vertices.append(vertice)
+        self.__lista_vertices.append(vertice)
 
     #Métodod para adicionar aresta
     def add_aresta(self, vertice, outro_vertice):
@@ -29,9 +29,9 @@ class Grafo:
     # método para retorna lista de vértices apenas
     def lista_vertices(self):
         for vertice in self.lista_vizinhos.keys():
-            if vertice not in self._lista_vertices:
+            if vertice not in self.__lista_vertices:
                 self.add_vertice(vertice)
-        return self._lista_vertices
+        return self.__lista_vertices
 
     #Método para deletar aresta de duas vértices bidimensional
     def deleta_aresta(self, vertice, outro_vertice):
@@ -44,7 +44,7 @@ class Grafo:
         for outro_vertice in self.lista_vizinhos[vertice]:
             self.deleta_aresta(vertice, outro_vertice)
         del self.lista_vizinhos[vertice]
-        del self._lista_vertices[vertice]
+        del self.__lista_vertices[vertice]
 
     #Retorno do grafo
     def getGrafo(self):
@@ -56,7 +56,7 @@ class Grafo:
 
 
 #classe com métodos para percorrer os caminhos de um grafo
-class GrafoCaminhos:
+class GrafoCaminhos(object):
     def __init__(self):
         print("Iniciado")
 
@@ -90,19 +90,47 @@ class GrafoCaminhos:
         while fila:
             # pega o primeiro caminho da fila
             caminho = fila.pop(0)
-            # pega o ultimo no do caminho
-            no = caminho[-1]
+            # pega a ultima vertice do caminho
+            vertice = caminho[-1]
             # verifica o fim do caminho
-            if no == fim:
+            if vertice == fim:
                 return caminho
-            # enumera todos os nos adjasentes, controe um novo caminha e coloca na fila
-            for adjasente in grafo.get(no, []):
+            # enumera todas vértices  adjasentes, controe um novo caminha e coloca na fila
+            for adjasente in grafo.get(vertice, []):
                 novo_caminho = list(caminho)
                 novo_caminho.append(adjasente)
                 fila.append(novo_caminho)
 
 
 #==============================================================================================
+
+#>>>>>>>>>>>Bônus<<<<<<<<<<<
+#Classe com métodos de cálculos da Classe Grafo
+class GrafoCalc(object):
+    #construtor da classe, exige que passe como parâmetro um objeto da classe Grafo
+    def __init__(self, pGrafo):
+        if isinstance(pGrafo,Grafo):
+            self.__grafo = pGrafo
+        else:
+            raise TypeError("Parâmetro {} não é do tipo {}".format(pGrafo, Grafo.__name__))
+
+
+    #Método para calcular e retornar uma lista da(s) vértice(s) com maior número de arestas no grafo
+    def verticesQuente(self):
+        cont = 0
+        lista = {}
+        #percorrendo todas vértices de um grafo
+        for vertice in self.__grafo.getGrafo():
+            #Entra Se número total de arestas for maior ou igual  que contador(cont)
+            if cont <= len(self.__grafo.getGrafo()[vertice]):
+                #se o número total de aresta for maior, significa que tem um novo total máximo, então a lista antiga é apagada para ser substituída
+                if cont != len(self.__grafo.getGrafo()[vertice]):
+                    lista.clear()
+                #adicionando o maior número ao contador
+                cont = len(self.__grafo.getGrafo()[vertice])
+                #adicionando vértice e seu número total de arestas na lista
+                lista[vertice] = cont
+        return lista
 
 
 if __name__ == "__main__":
@@ -136,7 +164,7 @@ if __name__ == "__main__":
     print("===============")
 
     #Retornando apenas uma vertice e suas arestas
-    print("Vértice {0}, arestas: ".format(5), grafo.vizinhos('5'))
+    print("Vértice {0}, arestas: ".format('5'), grafo.vizinhos('5'))
 
     print("===============")
 
@@ -150,7 +178,11 @@ if __name__ == "__main__":
 
     print("===============")
 
+    print(">>>>Bônus<<<")
 
+    #Instanciando classeCalc passando um grafo
+    grafo_calc = GrafoCalc(grafo)
 
-
+    #Retornando vértoces com maior número de arestas 
+    print("Vértice(s) com maior número de arestas: {0} (vertice : total de arestas)".format(grafo_calc.verticesQuente()))
 
