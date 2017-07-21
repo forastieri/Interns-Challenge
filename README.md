@@ -1,41 +1,81 @@
-Olá candidata(o),
-você foi selecionada(o) para participar da próxima etapa do processo de seleção para a vaga de estagiário desenvolvedor na maior empresa focada em Big Data no Brasil. Esta fase consiste em um desafio. 
+# Desafio Semantix 
 
-***Sugerimos uma leitura atenta, não seguir as orientações abaixo implicará em penalização no processo.***
+**Linguagem utilizada:** Python3
 
-## Algoritmo de Proximidade:
+Para o desafio da semantix foi criado um arquivo python com o nome: grafo.py, dentro desse file foi implementado três classes sendo duas necessária para o desafio e uma como bônus.
 
-Neste desafio, faremos uma análise de rede social e queremos extrair dessa rede social uma métrica conhecida como "Proximidade".
+**Classes:** Grafo, GrafoCaminho e GrafoCalc.
 
-Essa métrica tenta avaliar a influência de um indivíduo dentro de uma rede social.
+## Grafo
 
-A "Proximidade" de um vértice é o inverso de seu "Distanciamento".
+Classe que representa um grafo com seus vértices e arestas.
 
-A métrica "Distanciamento" de um dado vértice V<sub>k</sub> é a soma de todas as distâncias entre cada outro vértice e V<sub>k</sub>.
+####  Métodos:
+* **-add_vertice(vertice):** Método para adicionar um vértice.
+*	**-add_aresta(vertice1, vertice2):** Método para adicionar aresta, se caso um dos vértices não tenha sido adicionado ainda ele é criado automaticamente.  
+*	**-vizinhos(Vertice):** Retorna uma lista de arestas vinculada a um vértice que é passado por parâmetro. 
+*	**-lista_vertice():** Retorna uma lista com todos os vértices atuais do grafo.
+*	**-deleta_aresta(vertice1, vertice2):** Método para deletar uma aresta vinculada a dois vértices. 
+*	**-deleta_vertice(vertice):** Método para deletar um vértice e todas arestas com dependência do mesmo.   
+*	**-getGrafo():**  Retorna o grafo com todos os seus vértices e arestas.
 
-E a distância entre o vértice V<sub>0</sub> e o vértice V<sub>1</sub> é definida como o menor caminho entre V<sub>0</sub> e V<sub>1</sub>.
+## GrafoCaminho
 
-O desafio é classificar os vértices em um determinado grafo (fornecido no edges.dat) pela sua "Proximidade".
-Cada linha do arquivo consiste em dois nomes de vértice separados por um único espaço, o que representa uma ligação entre esses dois vértices.
+Classe com métodos de busca de caminhos de grafos.
 
+#### Métodos:
+*	**-encontra_caminho(Grafo, inicio, fim):** Retorna uma Lista de Caminho relacionando  duas vértices sendo uma o parâmetro inicio  do percurso e outra o parâmetro fim do percurso, esse método retorna o primeiro caminho achado no loop, sem lógica de proximidade.  
+*	**-bfs(Grafo, inicio, fim):** Retorna uma Lista de Caminho relacionando  duas vértices sendo uma o parâmetro inicio  do percurso e outra o parâmetro fim do percurso, método com lógica de Breadth-First Search – BFS(Busca em Largura) que retorna o caminho mais próximo dos dois pontos. 
 
-## Entrega:
+## GrafoCalc
+###### <Classe Bônus Desafio >
 
-Você deve fazer um **fork deste repositório no momento em que iniciar a atividade**, implementar o seu código e substituir este arquivo README.md; e nele **delinear a solução** e explicar como construir e executar o código.
+Classe com métodos de cálculos para Classe Grafo
 
-O seu código deve ser escrito em Python ou Scala (ou uma linguagem de programação funcional como Clojure, Scheme, Haskell ou F#).
+#### Métodos:
+* **-VerticesQuentes():** Retorna uma lista com o vértice com maior número de arestas no grafo, caso haver vértices com a mesma quantidade de arestas  esses também são retornados na lista.  
 
-A estrutura e legibilidade do código-base serão avaliadas.
+## Exemplo:
 
-**Bônus: Use pelo menos uma função anônima no seu código.**
+Após instanciar a Classe Grafo e atribuir os valores do grafo, podemos utilizar os seguintes métodos.
+```
+print(grafo.getGrafo())
+Retorno do Grafo  >> 
+```
+```
+print(grafo.,lista_vertices())
+Retorno de todos os vértices >> 
+```
+```
+print(grafo.vizinhos([vx]))
+Retorna um vértice e suas arestas dependentes >> 
+```
+Após instanciar a Classe GrafoCaminho  e com uma Instancia da Classe Grafo atribuída, podemos utilizar os seguintes métodos.
+```
+print(grafo_caminho.encontra_caminho(grafo.getGrafo(), [vx], [vy]))
+Retorna o primeiro caminho encontrado do ponto inicial ao ponto final no grafo >>
+```
+```
+print(grafo_caminho.bfs(grafo.getGrafo(), [vx], [vy]))
+Retorna o caminho mais curto de um ponto inicial ao ponto final usando lógica de busca em largura no grafo >>
+```
+###### >>Bônus<<
+Para instanciar a Classe GrafoCalc  temos que  atribuir no seu construtor uma instância da classe Grafo, após,  podemos utilizar os seguinte(s) método(s).
+```
+print(grafo_calc.verticesQuente())
+Retorna uma lista do(s) vértice(s) com mais arestas e total >>>  
+```
 
+## Autor
+**Fábio Forastieri**
 
-## Considerações Finais:
+## Bônus - Amostra de Grafo com teste em APIs de network para Grafos 
+Essa é uma amostra aparte do desafio, utilizando APIs do python para testar a interação na rede junto com classes criadas com lógica de busca de Caminhos próximos.
 
-Não há nenhum problema em usar as bibliotecas, por exemplo, para testar a interação na rede, porém **não use nem copie** bibliotecas que já implementem quaisquer algoritmos de grafo ou redes.
+#### Execução
+Dentro da pasta bonus-teste_network contem um arquivo python chamado teste_network.py com a  lógica da implementação.
+#### Dependência 
+Com o python3 temos que instalar os seguintes módulos: **Networkx** e **Pylab** 
+#### Resultado  
+Para caminho de vértice 1 até vértice 5, temos a seguinte saída no Grafo:
 
-**Lembre-se de fazer commits intermediários, _enquanto estiver desenvolvendo sua solução_; estamos interessados na evolução do código.**
-
-O código entregue no GitHub deverá ser executado sem alterações, e independente da interferência dos avaliadores. A única exceção é a instalação de dependências.
-
-O prazo de entrega é de 4 dias.
