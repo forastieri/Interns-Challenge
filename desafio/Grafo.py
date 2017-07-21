@@ -1,14 +1,14 @@
-#Classe para representar um grafo com suas vértices e arestas
+#Classe que representa um grafo com seus vértices e arestas.
 class Grafo(object):
     def __init__(self):
         self.lista_vizinhos = {}
         self.__lista_vertices = []
 
-    #Método para adicionar um vértice
+    #Método para adicionar um vértice.
     def add_vertice(self, vertice):
         self.__lista_vertices.append(vertice)
 
-    #Métodod para adicionar aresta
+    #Método para adicionar aresta, se caso um dos vértices não tenha sido adicionado ainda ele é criado automaticamente.
     def add_aresta(self, vertice, outro_vertice):
         #Se vértice não existe no vetor de arestas nesse momento ele é criado
         if not vertice in self.lista_vizinhos:
@@ -19,26 +19,26 @@ class Grafo(object):
             self.lista_vizinhos[outro_vertice] = []
         self.lista_vizinhos[outro_vertice].append(vertice)
 
-    #Método para chamar uma vértice e suas arestas
+    #Retorna uma lista de arestas vinculada a um vértice que é passado por parâmetro.
     def vizinhos(self, vertice):
         if vertice in self.lista_vizinhos:
             return self.lista_vizinhos[vertice]
         else:
             return []
 
-    # método para retorna lista de vértices apenas
+    #Retorna uma lista com todos os vértices atuais do grafo.
     def lista_vertices(self):
         for vertice in self.lista_vizinhos.keys():
             if vertice not in self.__lista_vertices:
                 self.add_vertice(vertice)
         return self.__lista_vertices
 
-    #Método para deletar aresta de duas vértices bidimensional
+    #Método para deletar uma aresta vinculada a dois vértices.
     def deleta_aresta(self, vertice, outro_vertice):
         self.vizinhos(vertice).remove(outro_vertice)
         self.vizinhos(outro_vertice).remove(vertice)
 
-    #Método para deletar uma Vertice e suas arestas
+    #Método para deletar um vértice e todas arestas com dependência do mesmo.
     def deleta_vertice(self, vertice):
         #Percorrendo vetor de arestas, para deletar todas arestas de uma Vértice
         for outro_vertice in self.lista_vizinhos[vertice]:
@@ -46,7 +46,7 @@ class Grafo(object):
         del self.lista_vizinhos[vertice]
         del self.__lista_vertices[vertice]
 
-    #Retorno do grafo
+    #Retorna o grafo com todos os seus vértices e arestas.
     def getGrafo(self):
         return self.lista_vizinhos
 
@@ -55,12 +55,13 @@ class Grafo(object):
 #==============================================================================================
 
 
-#classe com métodos para percorrer os caminhos de um grafo
+#Classe com métodos de busca de caminhos de grafos.
 class GrafoCaminhos(object):
     def __init__(self):
         print("Iniciado")
 
-    #Encontrar um caminho (com voltas ou não) de uma vértice até outra sem proximidade
+    #Retorna uma Lista de Caminho relacionando duas vértices sendo uma o parâmetro inicio do percurso e outra o parâmetro fim do percurso,
+    #esse método retorna o primeiro caminho achado no loop, sem lógica de proximidade.
     def encontra_caminho(self, grafo, inicio, fim, caminho=None):
         #Se não tem um pré caminho ele é criado nesse momento, usando para lógica de loop do método para retorna o vetor de caminho percorrido
         if caminho is None: caminho = []
@@ -80,7 +81,8 @@ class GrafoCaminhos(object):
         return None
 
 
-    #Método com lógica de Breadth-First Search - BFS(Busca em largura)
+    #Retorna uma Lista de Caminho relacionando duas vértices sendo uma o parâmetro inicio do percurso e outra o parâmetro fim do percurso,
+    #método com lógica de Breadth-First Search – BFS(Busca em Largura) que retorna o caminho mais próximo dos dois pontos.
     def bfs(self, grafo, inicio, fim):
         # cria a fila vazia
         fila = []
@@ -115,7 +117,8 @@ class GrafoCalc(object):
             raise TypeError("Parâmetro {} não é do tipo {}".format(pGrafo, Grafo.__name__))
 
 
-    #Método para calcular e retornar uma lista da(s) vértice(s) com maior número de arestas no grafo
+    #Retorna uma lista com o vértice com maior número de arestas no grafo,
+    #caso haver vértices com a mesma quantidade de arestas esses também são retornados na lista.
     def verticesQuente(self):
         cont = 0
         lista = {}
@@ -131,6 +134,9 @@ class GrafoCalc(object):
                 #adicionando vértice e seu número total de arestas na lista
                 lista[vertice] = cont
         return lista
+
+
+#==============================================================================================
 
 
 if __name__ == "__main__":
@@ -163,7 +169,7 @@ if __name__ == "__main__":
 
     print("===============")
 
-    #Retornando apenas uma vertice e suas arestas
+    #Retornando apenas uma vértice e suas arestas
     print("Vértice {0}, arestas: ".format('5'), grafo.vizinhos('5'))
 
     print("===============")
@@ -183,6 +189,6 @@ if __name__ == "__main__":
     #Instanciando classeCalc passando um grafo
     grafo_calc = GrafoCalc(grafo)
 
-    #Retornando vértoces com maior número de arestas 
+    #Retornando vértices com maior número de arestas
     print("Vértice(s) com maior número de arestas: {0} (vertice : total de arestas)".format(grafo_calc.verticesQuente()))
 
