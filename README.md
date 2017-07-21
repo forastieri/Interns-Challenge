@@ -4,7 +4,7 @@
 
 Para o desafio da semantix foi criado um arquivo python com o nome: grafo.py, dentro desse file foi implementado três classes sendo duas necessária para o desafio e uma como bônus.
 
-**Classes:** [Grafo](#Grafo), [GrafoCaminho](#GrafoCaminho) e [GrafoCalc](#GrafoCalc).
+**Classes:** [Grafo](#grafo), [GrafoCaminho](#grafocaminho) e [GrafoCalc](#grafocalc).
 
 ## Grafo
 
