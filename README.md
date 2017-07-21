@@ -79,3 +79,6 @@ Com o python3 temos que instalar os seguintes módulos: **Networkx** e **Pylab**
 #### Resultado  
 Para caminho de vértice 1 até vértice 5, temos a seguinte saída no Grafo:
 
+![Alt Text](https://github.com/forastieri/Interns-Challenge/blob/master/desafio/bonus-teste_network/Captura%20de%20tela%20de%202017-07-21%2013-38-24.png)
+
+![Alt Text](https://github.com/forastieri/Interns-Challenge/blob/master/desafio/bonus-teste_network/zoom.png)
